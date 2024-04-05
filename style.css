@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255,255, 0.05);
+    --hightlight-color: rgba(255, 255, 255, 0.3);
+    --swicht-bg-url: url(./assets/MoonStars.svg);
+}
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --hightlight-color: rgba(0, 0, 0, 0.1);
+    --swicht-bg-url: url(./assets/Sun.svg);
+}
+
+body{
+    background: var(--bg-url) no-repeat top center/cover;
+     
+}
+body *{
+    color: var(--text-color);
+    
+}
+#container {
+    width: 760px;
+    margin:56px auto 0px;
+   
+    padding: 0 24px;
+}
+/*profile*/
+
+#profile {
+    text-align: center;
+    padding: 24px;
+
+    
+}
+#profile image{
+   display: inline;
+    width: 112px;
+    margin: auto;
+    
+
+}
+/*existem elementos da familia display do tipo bloc e elementos do tpo in line
+ja de nascença porem se ultilizarmos a tag display: block ele ocupa toda a area 
+possivel em termos de largura e se for do tipo line ocupa o minimo possivel da area
+ tambem em termos de largura
+ elementos in line nao é possivel usar margin:auto */
+ #profile p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px ;
+
+ }
+ /*swicht*/
+#swicht {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+ #swicht button{
+    width: 32px;
+    height: 32px;
+    background: white var(--swicht-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+   
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+ }
+
+ .light #swicht button {
+    right: 0;
+    left: initial;
+ }
+
+ #swicht span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+ }
+
+
+ /*tipos de links*/
+ ul {
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px 0;
+   
+ }
+ ul li  a{
+    font-size: 28px;
+    border: 1px solid var(--stroke-color);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border-radius: 8px;
+    /*backdrop-filter: blur(1px);  usado para dar blush*/
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.5s ;
+    
+ }
+ ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+    /*border: 1.5px solid white; a foma correta porem gosteimas da atual*/
+ }
+
+ /*links-sociais*/
+
+ #links-sociais {
+    display: flex;
+    justify-content: center;
+    
+    padding: 24px 0;
+    font-size: 24px;
+    
+ }
+ #links-sociais a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    
+}
+
+#links-sociais a :hover {
+    background: var(--hightlight-color);
+    border-radius: 50%;
+    
+
+    
+ }
+ footer {
+    padding: 24px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+   
+ }

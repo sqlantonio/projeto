@@ -1,0 +1,18 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    
+}
+ body{
+    background: burlywood;
+ }
+
+#para {
+    display: flex;
+    height: 300px;
+    width: 246px;
+}
+
+    
