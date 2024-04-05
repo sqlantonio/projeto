@@ -25,6 +25,8 @@
 
 body{
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;   
+    
      
 }
 body *{
@@ -32,7 +34,8 @@ body *{
     
 }
 #container {
-    width: 760px;
+    width: 100%;
+    max-width: 588px;
     margin:56px auto 0px;
    
     padding: 0 24px;
@@ -83,11 +86,11 @@ possivel em termos de largura e se for do tipo line ocupa o minimo possivel da a
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+    animation: slide-out 0.5s;
  }
 
  .light #swicht button {
-    right: 0;
-    left: initial;
+   animation: slide-in 0.5s forwards;
  }
 
  #swicht span {
@@ -164,4 +167,33 @@ possivel em termos de largura e se for do tipo line ocupa o minimo possivel da a
     text-decoration: none;
     font-size: 24px;
    
+ }
+
+ /*media queries*/
+ @media (min-widht: 700px) {
+   :root {
+      --bg-url: url(./assets/bg-desktop.jpg);
+   }
+
+   .light {
+      --bg-url: url(./assets/bg-desktop-light.jpg);
+   }
+ }
+
+ /*animation*/
+ @keyframes slide-in {
+   from {
+      left: 0;
+   }
+   to {
+      left: 50%;
+   }
+ }
+ @keyframes slide-out {
+   from {
+      left: 50%;
+   }
+   to {
+      left: 0;
+   }
  }
